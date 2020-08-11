@@ -29,7 +29,7 @@ def token_required(f):
             print(data)
         except Exception as e:
             print(e)
-            return jsonify({'message': 'token is invalid'})
+            return jsonify({'message': 'token is invalid'+str(e)})
         return f(*args, **kwargs)
 
     return decorator
@@ -97,6 +97,6 @@ def download(uploadId):
 
 if __name__ == "__main__":
     # app.run(port=8081)
-    app.run(host="0.0.0.0",
+    app.run(host="0.0.0.0")
             # ssl_context=("/etc/ssl/certs/pythonusersapi/cert.pem","/etc/ssl/certs/pythonusersapi/key.pem"),
-            port=8082)
+            # port=8080)
